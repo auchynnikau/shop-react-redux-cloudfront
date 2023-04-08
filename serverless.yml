@@ -1,11 +1,13 @@
-service: shop-react-redux-cloudfront-course
+service: my-shop-react-redux-cloudfront
 
 frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs14.x
   region: us-east-1
+  # setup profile for AWS CLI.
+  # profile: node-aws
 
 plugins:
   - serverless-finch
@@ -14,7 +16,7 @@ plugins:
 
 custom:
   client:
-    bucketName: shop-react-redux-cloudfront-course
+    bucketName: my-shop-react-redux-cloudfront
     distributionFolder: dist
     indexDocument: index.html
     manageResources: false
